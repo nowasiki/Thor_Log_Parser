@@ -1,0 +1,12 @@
+import re
+
+# 高频交易日志（模拟 2025-11-12 实时数据）
+logs = """
+[2025-11-12 09:00:15.123] INFO  BUY  AAPL  100@175.50  latency=12ms  exec_id=EXEC98765
+[2025-11-12 09:00:15.456] WARN  SELL TSLA  50@250.00   failed: insufficient margin
+[2025-11-12 09:00:16.789] ICMP  ping 8.8.8.8  rtt=15.2ms  ttl=64  seq=1001
+[2025-11-12 09:00:17.001] ERROR ORDER_FORMAT_INVALID: buy NVDA @120.5 USD 50
+[2025-11-12 09:00:18.234] INFO  BUY  AAPL  200@175.60  latency=10ms   exec_id=EXEC98766 success
+[2025-11-12 09:00:19.567] ICMP  ping 114.114.114.114  rtt=22.1s  ttl=58  seq=1002  loss=0.0%
+[2025-11-12 09:00:20.890] WARN  MARKET_DATA_DELAY: 120ms > 100ms threshold
+"""
